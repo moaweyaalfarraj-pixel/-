@@ -100,6 +100,31 @@
         text-shadow: 0 0 8px var(--green), 0 0 26px rgba(57,255,20,.8), 0 0 70px rgba(57,255,20,.35);
       }
 
+
+      .loading {
+        width: min(390px, 76vw);
+        height: 8px;
+        margin: 30px auto 0;
+        padding: 2px;
+        overflow: hidden;
+        border: 1px solid rgba(57, 255, 20, .55);
+        background: rgba(0, 20, 3, .72);
+        box-shadow: 0 0 10px rgba(57, 255, 20, .2), inset 0 0 5px rgba(57, 255, 20, .15);
+      }
+
+      .loading-bar {
+        width: 42%;
+        height: 100%;
+        background: var(--green);
+        box-shadow: 0 0 8px var(--green), 0 0 18px rgba(57, 255, 20, .8);
+        animation: loading-scan 2s ease-in-out infinite;
+      }
+
+      @keyframes loading-scan {
+        0% { transform: translateX(-125%); }
+        100% { transform: translateX(365%); }
+      }
+
       .subline {
         margin-top: 28px;
         color: var(--green-soft);
@@ -150,8 +175,9 @@
 
     <main class="screen">
       <section class="content">
-        <div class="top-line">secure channel</div>
+        <div class="top-line">SYSTEM ACCESS</div>
         <h1>HACKING</h1>
+        <div class="loading" aria-label="Loading"><div class="loading-bar"></div></div>
         <div class="subline">accessing system<span class="cursor"></span></div>
       </section>
     </main>
